@@ -1,0 +1,99 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+
+version = '1.0.0'
+group = 'com.blackout'
+archivesBaseName = project.modId
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+minecraft {
+    mappings channel: "official", version: "1.16.5"
+    runs {
+        client {
+            workingDirectory project.file("run")
+            property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
+            property "forge.logging.console.level", "debug"
+            mods {
+                nofallingblocks {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file("run")
+            property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
+            property "forge.logging.console.level", "debug"
+            mods {
+                nofallingblocks {
+                    source sourceSets.main
+                }
+            }
+        }
+        data {
+            workingDirectory project.file("run")
+            property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
+            property "forge.logging.console.level", "debug"
+            args '--mod', 'nofallingblocks', '--all', '--output', file('src/main/generated/'), '--existing', file('src/main/resources/')
+            mods {
+                nofallingblocks {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets {
+    main.resources.srcDirs += 'src/main/generated'
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
+    implementation fg.deobf("curse.maven:biomes_o_plenty-220318:${project.bop}")
+    implementation fg.deobf("curse.maven:extended-slabs-plus-374492:${project.esp}")
+
+    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:${project.jei}")
+    implementation fg.deobf("curse.maven:just-enough-resources-jer-240630:${project.jer}")
+
+    runtimeOnly fg.deobf("curse.maven:the-one-probe-245211:${project.top}")
+
+}
+
+repositories {
+    maven {
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.k-4u.nl"
+    }
+    maven {
+        name = "CurseForge"
+        url = "https://www.cursemaven.com"
+    }
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : project.modName,
+                "Specification-Vendor"    : "Blackout",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.modName,
+                "Implementation-Version"  : project.modVersion,
+                "Implementation-Vendor"   : "Blackout",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+        ])
+    }
+}

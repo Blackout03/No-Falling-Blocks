@@ -10,7 +10,7 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle'
 
-version = '1.0.0'
+version = project.modVersion
 group = 'com.blackout'
 archivesBaseName = project.modId
 
@@ -61,6 +61,9 @@ dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
     implementation fg.deobf("curse.maven:biomes_o_plenty-220318:${project.bop}")
     implementation fg.deobf("curse.maven:extended-slabs-plus-374492:${project.esp}")
+
+    implementation fg.deobf("curse.maven:configured-457570:${project.configured}")
+    implementation fg.deobf("curse.maven:catalogue-459701:${project.catalogue}")
 
     runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:${project.jei}")
     implementation fg.deobf("curse.maven:just-enough-resources-jer-240630:${project.jer}")

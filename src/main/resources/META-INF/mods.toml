@@ -1,28 +1,28 @@
 modLoader="javafml"
 loaderVersion="[36,)"
-issueTrackerURL=""
-displayURL=""
+issueTrackerURL="https://github.com/Blackout03/No-Falling-Blocks/issues"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/no-falling-blocks"
 license="All rights reserved"
 
 [[mods]]
-    modId="nofallingblocks"
-    version="${file.jarVersion}"
-    displayName="No Falling Blocks"
-    displayURL=""
-    updateJSONURL=""
-    authors="Blackout03"
-    description='''Ever get sick of all your blocks falling when you break a block. This mod fixes that for Vanilla Blocks and some Modded Blocks.'''
+modId="nofallingblocks"
+version="${file.jarVersion}"
+displayName="No Falling Blocks"
+authors="Blackout03"
+description='''Ever get sick of all your blocks falling when you break a block. This mod fixes that for Vanilla Blocks and some Modded Blocks.'''
+itemIcon="minecraft:sand"
+logoFile="icon.png"
 
 [[dependencies.nofallingblocks]]
-    modId="forge"
-    mandatory=true
-    versionRange="[36,)"
-    ordering="NONE"
-    side="BOTH"
+modId="forge"
+mandatory=true
+versionRange="[36,)"
+ordering="NONE"
+side="BOTH"
 
-[[dependencies.extendedslabs]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.16.5]"
-    ordering="NONE"
-    side="BOTH"
+[[dependencies.nofallingblocks]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.16.5]"
+ordering="NONE"
+side="BOTH"

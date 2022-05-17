@@ -11,12 +11,11 @@ displayName="No Falling Blocks"
 authors="Blackout03"
 description='''Ever get sick of all your blocks falling when you break a block. This mod fixes that for Vanilla Blocks and some Modded Blocks.'''
 itemIcon="minecraft:sand"
-logoFile="icon.png"
 
 [[dependencies.nofallingblocks]]
 modId="forge"
 mandatory=true
-versionRange="[36,)"
+versionRange="[36.2.20,)"
 ordering="NONE"
 side="BOTH"
 

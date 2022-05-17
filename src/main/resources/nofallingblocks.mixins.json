@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "com.blackout.nofallingblocks.mixins",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+		"MixinFallingBlock"
+	],
+	"client": [],
+	"refmap": "nofallingblocks.refmap.json",
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

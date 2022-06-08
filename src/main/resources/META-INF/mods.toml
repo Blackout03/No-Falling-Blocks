@@ -8,7 +8,7 @@ license="All rights reserved"
 modId="nofallingblocks"
 version="${file.jarVersion}"
 displayName="No Falling Blocks"
-authors="Blackout03"
+authors="Blackout"
 description='''Ever get sick of all your blocks falling when you break a block. This mod fixes that for Vanilla Blocks and some Modded Blocks.'''
 itemIcon="minecraft:sand"
 

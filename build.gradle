@@ -26,6 +26,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of 8
 minecraft {
     mappings channel: "official", version: "${project.minecraftVersion}"
 
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
     runs {
         client {
             workingDirectory project.file("run")
@@ -99,12 +101,12 @@ dependencies {
 
 repositories {
     maven {
-        name = "Progwml6 maven"
-        url = "https://dvs1.progwml6.com/files/maven/"
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
     }
     maven {
         name = "CurseForge"
-        url = "https://www.cursemaven.com"
+        url = "https://cursemaven.com"
     }
 }
 

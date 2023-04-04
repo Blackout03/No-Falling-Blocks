@@ -1,8 +1,10 @@
 package com.blackout.nofallingblocks.mixins;
 
+import com.blackout.nofallingblocks.NoFallingBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FallingBlock;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -20,12 +22,16 @@ public abstract class MixinFallingBlock extends Block {
 	}
 
 	@Inject(method = "tick", at = @At("HEAD"), cancellable = true)
-	private void cancelFalling(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
-		ci.cancel();
+	private void cancelFalling(BlockState blockState, ServerWorld world, BlockPos blockPos, Random random, CallbackInfo callbackInfo) {
+		if (world.getGameRules().getRule(NoFallingBlocks.PREVENT_BLOCK_FALLING_RULE).get()) {
+			callbackInfo.cancel();
+		}
 	}
 
 	@Inject(method = "animateTick", at = @At("HEAD"), cancellable = true)
-	private void cancelFallingParticle(BlockState state, World world, BlockPos pos, Random random, CallbackInfo ci) {
-		ci.cancel();
+	private void cancelFallingParticle(BlockState blockState, World world, BlockPos blockPos, Random random, CallbackInfo callbackInfo) {
+		if (world.getGameRules().getRule(NoFallingBlocks.PREVENT_BLOCK_FALLING_RULE).get()) {
+			callbackInfo.cancel();
+		}
 	}
 }

@@ -15,7 +15,7 @@ itemIcon="minecraft:sand"
 [[dependencies.nofallingblocks]]
 modId="forge"
 mandatory=true
-versionRange="[36.2.20,)"
+versionRange="[36.2.39,)"
 ordering="NONE"
 side="BOTH"
 

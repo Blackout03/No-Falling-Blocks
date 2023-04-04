@@ -21,7 +21,7 @@ group = 'com.blackout'
 version = "${project.minecraftVersion}-${project.modVersion}"
 archivesBaseName = project.modId
 
-java.toolchain.languageVersion = JavaLanguageVersion.of 8
+java.toolchain.languageVersion = JavaLanguageVersion.of 17
 
 minecraft {
     mappings channel: "official", version: "${project.minecraftVersion}"
@@ -85,28 +85,29 @@ dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraftVersion}-${project.forgeVersion}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    implementation fg.deobf("curse.maven:biomes_o_plenty-220318:${project.bop}")
-    implementation fg.deobf("curse.maven:extended-slabs-plus-374492:${project.esp}")
+//    implementation fg.deobf("curse.maven:biomes_o_plenty-220318:${project.bop}")
+//    implementation fg.deobf("curse.maven:terrablender-563928:${project.terrablender}")
+//    implementation fg.deobf("curse.maven:extended-slabs-plus-374492:${project.esp}")
 
-    implementation fg.deobf("mezz.jei:jei-1.16.5:${project.jei}:api")
-    implementation fg.deobf("mezz.jei:jei-1.16.5:${project.jei}")
-    implementation fg.deobf("curse.maven:just-enough-resources-jer-240630:${project.jer}")
+//    compileOnly(fg.deobf("mezz.jei:jei-${project.minecraftVersion}-common-api:${project.jei}"))
+//    compileOnly(fg.deobf("mezz.jei:jei-${project.minecraftVersion}-forge-api:${project.jei}"))
+//    runtimeOnly(fg.deobf("mezz.jei:jei-${project.minecraftVersion}-forge:${project.jei}"))
+//    implementation fg.deobf("curse.maven:just-enough-resources-jer-240630:${project.jer}")
 
-    implementation fg.deobf("curse.maven:configured-457570:${project.configured}")
-    implementation fg.deobf("curse.maven:catalogue-459701:${project.catalogue}")
+//    implementation fg.deobf("curse.maven:configured-457570:${project.configured}")
+//    implementation fg.deobf("curse.maven:catalogue-459701:${project.catalogue}")
 
-    runtimeOnly fg.deobf("curse.maven:the-one-probe-245211:${project.top}")
-
+//    runtimeOnly fg.deobf("curse.maven:the-one-probe-245211:${project.top}")
 }
 
 repositories {
     maven {
-        name = "Jared's maven"
-        url = "https://maven.blamejared.com/"
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven {
         name = "CurseForge"
-        url = "https://cursemaven.com"
+        url = "https://www.cursemaven.com"
     }
 }
 

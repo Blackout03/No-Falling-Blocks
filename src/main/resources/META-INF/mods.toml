@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[40,)"
+loaderVersion="[43,)"
 issueTrackerURL="https://github.com/Blackout03/No-Falling-Blocks/issues"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/no-falling-blocks"
 license="All rights reserved"
@@ -15,13 +15,13 @@ itemIcon="minecraft:sand"
 [[dependencies.nofallingblocks]]
 modId="forge"
 mandatory=true
-versionRange="[40.2.1,)"
+versionRange="[43.2.8,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.nofallingblocks]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.18.2]"
+versionRange="[1.19.2]"
 ordering="NONE"
 side="BOTH"

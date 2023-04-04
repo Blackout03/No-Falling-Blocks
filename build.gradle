@@ -89,9 +89,9 @@ dependencies {
 //    implementation fg.deobf("curse.maven:terrablender-563928:${project.terrablender}")
 //    implementation fg.deobf("curse.maven:extended-slabs-plus-374492:${project.esp}")
 
-//    compileOnly(fg.deobf("mezz.jei:jei-${project.minecraftVersion}-common-api:${project.jei}"))
-//    compileOnly(fg.deobf("mezz.jei:jei-${project.minecraftVersion}-forge-api:${project.jei}"))
-//    runtimeOnly(fg.deobf("mezz.jei:jei-${project.minecraftVersion}-forge:${project.jei}"))
+//    implementation fg.deobf("mezz.jei:jei-${project.minecraftVersion}-common-api:${project.jei}")
+//    implementation fg.deobf("mezz.jei:jei-${project.minecraftVersion}-forge-api:${project.jei}")
+//    implementation fg.deobf("mezz.jei:jei-${project.minecraftVersion}-forge:${project.jei}")
 //    implementation fg.deobf("curse.maven:just-enough-resources-jer-240630:${project.jer}")
 
 //    implementation fg.deobf("curse.maven:configured-457570:${project.configured}")

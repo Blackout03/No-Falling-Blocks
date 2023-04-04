@@ -3,6 +3,7 @@ package com.blackout.nofallingblocks.mixins;
 import com.blackout.nofallingblocks.NoFallingBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
@@ -12,8 +13,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.Random;
-
 @Mixin(FallingBlock.class)
 public abstract class FallingBlockMixin extends Block {
 	public FallingBlockMixin(Properties properties) {
@@ -21,14 +20,14 @@ public abstract class FallingBlockMixin extends Block {
 	}
 
 	@Inject(method = "tick", at = @At("HEAD"), cancellable = true)
-	private void cancelFalling(BlockState blockState, ServerLevel level, BlockPos blockPos, Random random, CallbackInfo callbackInfo) {
+	private void cancelFalling(BlockState blockState, ServerLevel level, BlockPos blockPos, RandomSource randomSource, CallbackInfo callbackInfo) {
 		if (level.getGameRules().getRule(NoFallingBlocks.PREVENT_BLOCK_FALLING_RULE).get()) {
 			callbackInfo.cancel();
 		}
 	}
 
 	@Inject(method = "animateTick", at = @At("HEAD"), cancellable = true)
-	private void cancelFallingParticle(BlockState blockState, Level level, BlockPos blockPos, Random random, CallbackInfo callbackInfo) {
+	private void cancelFallingParticle(BlockState blockState, Level level, BlockPos blockPos, RandomSource randomSource, CallbackInfo callbackInfo) {
 		if (level.getGameRules().getRule(NoFallingBlocks.PREVENT_BLOCK_FALLING_RULE).get()) {
 			callbackInfo.cancel();
 		}
